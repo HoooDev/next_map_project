@@ -4,6 +4,7 @@ import { Store } from '../types/store';
 import { useEffect } from 'react';
 import useStores from '@/hooks/useStores';
 import HomeHeader from '@/components/home/Header';
+import DetailSection from '@/components/home/DetailSection';
 
 interface Props {
   stores: Store[];
@@ -19,8 +20,16 @@ const Home: NextPage<Props> = ({ stores }) => {
   return (
     <>
       <HomeHeader />
-      <main style={{ width: '100%', height: '100%' }}>
+      <main
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          overflow: 'hidden',
+        }}
+      >
         <MapSection />
+        <DetailSection />
       </main>
     </>
   );

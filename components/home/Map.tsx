@@ -3,6 +3,7 @@ import Script from 'next/script';
 import { Coordinates } from '../../types/store';
 import { NaverMap } from '../../types/map';
 import { INITIAL_CENTER, INITIAL_ZOOM } from '../../hooks/useMap';
+import styles from '../../styles/map.module.scss';
 
 type Props = {
   mapId?: string;
@@ -57,7 +58,11 @@ const Map = ({
         // next.comfig에서 reactStrictMode:false로 설정 해주면 디버깅 모드에서도 확인 가능
         onReady={initializeMap}
       />
-      <div id={mapId} style={{ width: '100%', height: '100%' }} />
+      <div
+        className={styles.map}
+        id={mapId}
+        style={{ width: '100%', height: '100%' }}
+      />
     </>
   );
 };
