@@ -5,7 +5,11 @@ import { Fragment } from 'react';
 export default function Home() {
   return (
     <Fragment>
-      <NextSeo title="피드백" description="매장 지도 서비스 피드백" />
+      <NextSeo
+        title="피드백"
+        description="매장 지도 서비스 피드백"
+        canonical="https://next-map-project.vercel.app/feedback"
+      />
       <Header></Header>
     </Fragment>
   );

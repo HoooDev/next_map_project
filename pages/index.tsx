@@ -24,6 +24,7 @@ const Home: NextPage<Props> = ({ stores }) => {
       <NextSeo
         title="Hoo_Map"
         description="네이버 지도를 활용한 Next.js 토이 프로젝트"
+        canonical="https://next-map-project.vercel.app/"
       />
       <HomeHeader />
       <main
