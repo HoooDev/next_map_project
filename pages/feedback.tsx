@@ -1,5 +1,5 @@
 import Header from '@/components/common/Header';
-import { NextSeo } from 'next-seo/lib/meta/nextSEO';
+import { NextSeo } from 'next-seo';
 import { Fragment } from 'react';
 
 export default function Home() {
