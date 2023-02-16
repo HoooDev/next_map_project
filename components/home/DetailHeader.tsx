@@ -30,6 +30,7 @@ const DetailHeader = ({ expanded, currentStore, onClickArrow }: Props) => {
             className={headerStyles.box}
             onClick={() => {
               copy(location.origin + '/' + currentStore.name);
+              alert('매장 정보가 복사되었습니다.');
             }}
             aria-label="매장 페이지 주소 클립보드 복사"
           >

@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
         src={`https://www.googletagmanager.com/gtag/js?id=G-3ZB5DW6LYZ`}
       />
       <DefaultSeo {...SEO} />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 }

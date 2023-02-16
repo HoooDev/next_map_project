@@ -19,6 +19,7 @@ const HomeHeader = () => {
 
     router.replace(query);
     copy(location.origin + query);
+    alert('해당 지도가 복사 되었습니다.');
   }, [router, getMapOptions]);
 
   return (

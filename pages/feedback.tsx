@@ -2,7 +2,7 @@ import Header from '@/components/common/Header';
 import { NextSeo } from 'next-seo';
 import { Fragment } from 'react';
 
-export default function Home() {
+export const FeedbackPage = () => {
   return (
     <Fragment>
       <NextSeo
@@ -13,4 +13,6 @@ export default function Home() {
       <Header></Header>
     </Fragment>
   );
-}
+};
+
+export default FeedbackPage;
