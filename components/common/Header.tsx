@@ -12,8 +12,19 @@ const HeaderComponent = ({ onClickLogo, rightElements }: Props) => {
   return (
     <header className={styles.header}>
       <div className={styles.flexItem}>
-        <Link href="/" className={styles.box} onClick={onClickLogo}>
-          <Image src="/logo.png" width={140} height={35} alt="로고" />
+        <Link
+          href="/"
+          className={styles.box}
+          onClick={onClickLogo}
+          aria-label="홈으로 이동"
+        >
+          <Image
+            src="/logo.png"
+            width={140}
+            height={35}
+            alt="로고"
+            priority={true}
+          />
         </Link>
       </div>
       {rightElements && (

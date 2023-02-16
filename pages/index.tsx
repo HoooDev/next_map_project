@@ -1,10 +1,12 @@
 import MapSection from '@/components/home/MapSection';
 import { NextPage } from 'next';
 import { Store } from '../types/store';
-import { useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import useStores from '@/hooks/useStores';
 import HomeHeader from '@/components/home/Header';
 import DetailSection from '@/components/home/DetailSection';
+import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 interface Props {
   stores: Store[];
@@ -18,7 +20,11 @@ const Home: NextPage<Props> = ({ stores }) => {
   }, [initializeStores, stores]);
 
   return (
-    <>
+    <Fragment>
+      <NextSeo
+        title="Hoo_Map"
+        description="네이버 지도를 활용한 Next.js 토이 프로젝트"
+      />
       <HomeHeader />
       <main
         style={{
@@ -31,7 +37,7 @@ const Home: NextPage<Props> = ({ stores }) => {
         <MapSection />
         <DetailSection />
       </main>
-    </>
+    </Fragment>
   );
 };
 
