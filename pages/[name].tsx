@@ -5,6 +5,7 @@ import DetailHeader from '@/components/home/DetailHeader';
 import DetailContent from '@/components/home/DetailContent';
 import { useRouter } from 'next/router';
 import useCurrentStore from '@/hooks/useCurrentStore';
+import { NextSeo } from 'next-seo';
 
 interface Props {
   store: Store;
@@ -22,16 +23,23 @@ const StoreDetail: NextPage<Props> = ({ store }) => {
     );
   };
   return (
-    <div
-      className={`${styles.detailSection} ${styles.selected} ${styles.expanded}`}
-    >
-      <DetailHeader
-        expanded={expanded}
-        currentStore={store}
-        onClickArrow={goToMap}
+    <>
+      <NextSeo
+        title="Hoo_Map"
+        description="네이버 지도를 활용한 Next.js 토이 프로젝트 - 매장 상세 페이지"
+        canonical={`https://next-map-project.vercel.app/${store.name}`}
       />
-      <DetailContent currentStore={store} expanded={expanded} />
-    </div>
+      <div
+        className={`${styles.detailSection} ${styles.selected} ${styles.expanded}`}
+      >
+        <DetailHeader
+          expanded={expanded}
+          currentStore={store}
+          onClickArrow={goToMap}
+        />
+        <DetailContent currentStore={store} expanded={expanded} />
+      </div>
+    </>
   );
 };
 export default StoreDetail;

@@ -24,6 +24,7 @@ const Home: NextPage<Props> = ({ stores }) => {
       <NextSeo
         title="Hoo_Map"
         description="네이버 지도를 활용한 Next.js 토이 프로젝트"
+        canonical="https://next-map-project.vercel.app/"
       />
       <HomeHeader />
       <main
@@ -44,7 +45,10 @@ const Home: NextPage<Props> = ({ stores }) => {
 export default Home;
 
 export async function getStaticProps() {
-  const stores = (await import('../public/stores.json')).default;
+  // const stores = (await import('../public/stores.json')).default;
+  const stores = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/stores`
+  ).then((res) => res.json());
 
   return {
     props: { stores },
